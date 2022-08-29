@@ -8,7 +8,7 @@ app.use(fileUpload());
 /***************************
  * Import router of all Models
  ****************************/
- const AssociateRouter=require("./api/associate/router");
+const AssociateRouter=require("./api/associate/router");
 const UserDocRouter=require("./api/user_docs/router");
 const PaymentRouter=require("./api/payment/router");
 const NomineeRouter=require("./api/nominee/router");
@@ -16,6 +16,7 @@ const InvesmentRouter=require("./api/invesment/router");
 const BankAccountRouter=require("./api/bank_account/router");
 const AgreementRouter=require("./api/agreement/router");
 const CustomerRouter=require("./api/customer/router");
+const LoginRouter=require("./api/login/router");
 /**
  * Middleware for js object to json data
  */
@@ -40,7 +41,7 @@ app.use("/api/invesment",InvesmentRouter);
 app.use("/api/bankaccount",BankAccountRouter);
 app.use("/api/agreement",AgreementRouter);
 app.use("/api/customer",CustomerRouter);
-
+app.use("/api/login",LoginRouter); 
 
 
 /************************
