@@ -1,0 +1,101 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+
+
+
+<style>
+
+</style>
+
+<div  class="isolate{% unless section.settings.full_width %} page-width{% endunless %} section-{{ section.id }}-padding">
+
+<div class="brand-icons-section">
+ 
+  <p>Brand Icon Section</p>
+  
+  
+
+</div>
+
+</div>
+
+
+
+
+{% schema %} 
+{
+"name": "Brand Icons",
+"settings": [
+ {
+  "type": "text",
+  "id": "title",
+  "label": "Section Heading"
+},
+{
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "t:sections.video.settings.full_width.label",
+      "default": false
+    },
+{
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+
+
+  ],
+
+ "blocks": [
+     {
+       "name": "icon",
+       "type": "icon",
+       "settings": [
+         {
+           "type": "image_picker",
+           "id": "image",
+           "label": "Select Image"
+         }
+       ]
+     }
+   ],
+
+"presets": [
+{
+"name": "Brand Icons",
+"category": "Custom Layout"
+}
+]
+}
+{% endschema %}
+{% stylesheet %}
+{% endstylesheet %}
+{% javascript %}
+{% endjavascript %}
